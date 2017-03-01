@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/cirrusidentity/simplesamlphp-module-cirrusexample.svg?branch=master)](https://travis-ci.org/cirrusidentity/simplesamlphp-module-cirrusexample)
 # simplesamlphp-module-cirrusexample
 
 Examples of doing things in an SSP module
