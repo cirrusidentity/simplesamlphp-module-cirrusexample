@@ -17,7 +17,7 @@ $kernel->init([
 
 // AspectMock seems to have trouble with SSP's custom class loader. So if you have class names like 'ssp_modulename_*' you
 // may need to explicity loader them
-//$kernel->loadFile($projectRoot . '/lib/Customeclass.php');
+$kernel->loadFile($projectRoot . '/lib/ExampleService.php');
 
 // Symlink module into ssp vendor lib so that templates and urls can resolve correctly
 // SSP tries to resolve these against its modules directory
