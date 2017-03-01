@@ -6,6 +6,7 @@ php:
 matrix:
   allow_failures:
   - php: hhvm
+  - php: 7.0
 install:
 - composer install
 script: vendor/bin/phpunit  --coverage-clover build/logs/clover.xml
