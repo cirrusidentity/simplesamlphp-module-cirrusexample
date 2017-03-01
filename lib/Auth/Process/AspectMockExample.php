@@ -28,18 +28,22 @@ class sspmod_cirrusexample_Auth_Process_AspectMockExample extends SimpleSAML_Aut
     {
         $service = new sspmod_cirrusexample_ExampleService($this->config);
 
-        $action = $service->determineAction();
+        if (!isset($request['Attributes']['action'])) {
+            throw new SimpleSAML_Error_Exception("No 'action' Attribute");
+        }
+        $action = $request['Attributes']['action'][0];
         switch ($action) {
-            case "explode":
-                throw new SimpleSAML_Error_Exception('Process filter exploded');
-                break;
             case "redirect":
-                SimpleSAML\Utils\HTTP::redirectTrustedURL('https://someurl', ['param1' => 'value1']);
+                SimpleSAML\Utils\HTTP::redirectTrustedURL($this->config['redirectUrl'], ['param1' => 'value1']);
                 assert('FALSE');
                 break;
-            case "method":
+            case "update":
                 $service->updateAction($request['Attributes']['someAttribute']);
                 break;
+            default:
+                throw new SimpleSAML_Error_Exception("Unrecognized $action Attribute");
+                break;
+
         }
     }
 }
