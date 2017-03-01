@@ -1,0 +1,14 @@
+{
+    "name": "cirrusidentity/simplesamlphp-module-cirrusexample",
+    "description": "Example of doing things in a standalone module",
+    "type": "simplesamlphp-module",
+    "require": {
+        "php": "^5.6",
+        "simplesamlphp/composer-module-installer": "^1.1"
+    },
+    "require-dev": {
+        "simplesamlphp/simplesamlphp": "1.14.11",
+        "phpunit/phpunit": "^5.7",
+        "codeception/aspect-mock": "*"
+    }
+}
